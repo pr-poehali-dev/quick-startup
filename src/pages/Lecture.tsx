@@ -18,6 +18,22 @@ const specialtyLanguage = [
   { term: "Роль в обучении и практике", desc: "формирование профессиональной компетенции, обеспечение точности и безопасности деятельности." },
 ]
 
+const dictionaries = [
+  { term: "Определение", desc: "справочные издания, фиксирующие термины, их определения, эквиваленты на других языках, контекст употребления и сокращения." },
+  { term: "Виды словарей", desc: "общетерминологические, отраслевые (медицина, юриспруденция, ИТ, инженерия и т.д.), двуязычные и многоязычные, словари стандартов и нормативных документов." },
+  { term: "Функции", desc: "кодификация терминов, унификация языка профессии, поддержка обучения и перевода, справочная помощь при междисциплинарном и межкультурном взаимодействии." },
+  { term: "Требования к словарям", desc: "авторитетность источников, ясные и сопоставимые дефиниции, указание области применения, примеры употребления, ссылки на стандарты, обновляемость." },
+]
+
+const recommendations = [
+  "Выбирать стиль и терминологию, соответствующие аудитории и цели.",
+  "Определять и при необходимости пояснять ключевые термины в начале выступления или документа.",
+  "Использовать стандартные речевые формулы для формализованных действий (приём заявок, отчёты, инструкции).",
+  "Соблюдать речевой этикет и корпоративные нормы коммуникации.",
+  "Пользоваться отраслевыми словарями и глоссариями для согласованности терминов.",
+  "Развивать коммуникативную компетентность: слушать, проверять понимание, перефразировать и уточнять.",
+]
+
 const listItems = {
   aspects: [
     { term: "Нормативность", desc: "соответствие высказываний языковым и профессиональным нормам." },
@@ -197,6 +213,59 @@ export default function Lecture() {
                   </li>
                 ))}
               </ul>
+            </div>
+          </section>
+
+          {/* Отраслевые словари */}
+          <section className="flex gap-8">
+            <div className="flex-shrink-0 w-8 pt-1">
+              <span className="text-white/20 text-xs font-mono">08</span>
+            </div>
+            <div className="flex-1 border-t border-white/10 pt-6">
+              <h2 className="text-lg font-medium text-white mb-5">Отраслевые терминологические словари</h2>
+              <ul className="space-y-3">
+                {dictionaries.map((item) => (
+                  <li key={item.term} className="flex gap-3 text-sm">
+                    <span className="text-violet-400/70 mt-0.5 flex-shrink-0">—</span>
+                    <span className="text-white/60 leading-6">
+                      <span className="text-white/90 font-medium">{item.term}</span> — {item.desc}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
+
+          {/* Практические рекомендации */}
+          <section className="flex gap-8">
+            <div className="flex-shrink-0 w-8 pt-1">
+              <span className="text-white/20 text-xs font-mono">09</span>
+            </div>
+            <div className="flex-1 border-t border-white/10 pt-6">
+              <h2 className="text-lg font-medium text-white mb-5">Практические рекомендации</h2>
+              <ul className="space-y-3">
+                {recommendations.map((rec, i) => (
+                  <li key={i} className="flex gap-3 text-sm">
+                    <span className="text-violet-400/70 mt-0.5 flex-shrink-0">—</span>
+                    <span className="text-white/60 leading-6">{rec}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
+
+          {/* Заключение */}
+          <section className="flex gap-8">
+            <div className="flex-shrink-0 w-8 pt-1">
+              <span className="text-white/20 text-xs font-mono">10</span>
+            </div>
+            <div className="flex-1 border-t border-white/10 pt-6">
+              <h2 className="text-lg font-medium text-white mb-3">Заключение</h2>
+              <div className="border-l border-violet-500/40 pl-4">
+                <p className="text-sm font-light text-white/70 leading-7">
+                  Язык профессиональной коммуникации — это не только инструмент передачи знаний, но и механизм регулирования взаимодействия, поддержания профессиональных стандартов и преодоления межкультурных барьеров. Соблюдение языковых и речевых норм, корректное использование терминологии и речевого этикета повышают эффективность, точность и безопасность профессионального общения.
+                </p>
+              </div>
             </div>
           </section>
 
