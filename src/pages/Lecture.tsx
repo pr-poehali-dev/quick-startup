@@ -1,6 +1,23 @@
 import { useNavigate } from "react-router-dom"
 import Icon from "@/components/ui/icon"
 
+const speechFormulas = [
+  { term: "Речевые формулы", desc: "стандартные языковые конструкции, облегчающие взаимодействие и уменьшающие коммуникативные риски: приветствия, обращения, вводные фразы, формулы согласия/несогласия, завершения разговора. Примеры: «Добрый день», «Прошу предоставить», «С уважением», «Спасибо за внимание»." },
+  { term: "Речевой этикет", desc: "совокупность установленных правил вежливого общения в профессиональной среде: обращение по должности/титулу, использование формальных или неформальных форм на «Вы»/«ты», соблюдение субординации, уважительные обороты при критике, благодарность за помощь." },
+]
+
+const terminology = [
+  { term: "Терминология", desc: "совокупность терминов, специально выделенных и закреплённых в определённой области знания или деятельности; термины имеют точное, однозначное значение в пределах дисциплины." },
+  { term: "Профессиональная лексика", desc: "включает термины, профессионализмы, сокращения, аббревиатуры, фразеологизмы отраслевого характера и иногда жаргон; служит для экономии языка и точной передачи содержания." },
+  { term: "Функции терминологии в коммуникации", desc: "обеспечение точности, ускорение обмена информацией, создание профессиональной идентичности и границы принадлежности к сообществу." },
+]
+
+const specialtyLanguage = [
+  { term: "Понятие", desc: "совокупность языковых средств (лексика, синтаксис, стилистические приёмы), характерных для конкретной профессиональной деятельности." },
+  { term: "Особенности языка специальности", desc: "высокая концентрация терминов, нормативная фразеология (инструкции, протоколы), устойчивые формулы, использование пассивных конструкций и безличных форм для объективизации информации, стандартизированные формы представления данных." },
+  { term: "Роль в обучении и практике", desc: "формирование профессиональной компетенции, обеспечение точности и безопасности деятельности." },
+]
+
 const listItems = {
   aspects: [
     { term: "Нормативность", desc: "соответствие высказываний языковым и профессиональным нормам." },
@@ -112,6 +129,66 @@ export default function Lecture() {
               <h2 className="text-lg font-medium text-white mb-5">Языковые и речевые нормы</h2>
               <ul className="space-y-3">
                 {listItems.norms.map((item) => (
+                  <li key={item.term} className="flex gap-3 text-sm">
+                    <span className="text-violet-400/70 mt-0.5 flex-shrink-0">—</span>
+                    <span className="text-white/60 leading-6">
+                      <span className="text-white/90 font-medium">{item.term}</span> — {item.desc}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
+
+          {/* Речевые формулы */}
+          <section className="flex gap-8">
+            <div className="flex-shrink-0 w-8 pt-1">
+              <span className="text-white/20 text-xs font-mono">05</span>
+            </div>
+            <div className="flex-1 border-t border-white/10 pt-6">
+              <h2 className="text-lg font-medium text-white mb-5">Речевые формулы и речевой этикет</h2>
+              <ul className="space-y-3">
+                {speechFormulas.map((item) => (
+                  <li key={item.term} className="flex gap-3 text-sm">
+                    <span className="text-violet-400/70 mt-0.5 flex-shrink-0">—</span>
+                    <span className="text-white/60 leading-6">
+                      <span className="text-white/90 font-medium">{item.term}</span> — {item.desc}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
+
+          {/* Терминология */}
+          <section className="flex gap-8">
+            <div className="flex-shrink-0 w-8 pt-1">
+              <span className="text-white/20 text-xs font-mono">06</span>
+            </div>
+            <div className="flex-1 border-t border-white/10 pt-6">
+              <h2 className="text-lg font-medium text-white mb-5">Терминология и профессиональная лексика</h2>
+              <ul className="space-y-3">
+                {terminology.map((item) => (
+                  <li key={item.term} className="flex gap-3 text-sm">
+                    <span className="text-violet-400/70 mt-0.5 flex-shrink-0">—</span>
+                    <span className="text-white/60 leading-6">
+                      <span className="text-white/90 font-medium">{item.term}</span> — {item.desc}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
+
+          {/* Язык специальности */}
+          <section className="flex gap-8">
+            <div className="flex-shrink-0 w-8 pt-1">
+              <span className="text-white/20 text-xs font-mono">07</span>
+            </div>
+            <div className="flex-1 border-t border-white/10 pt-6">
+              <h2 className="text-lg font-medium text-white mb-5">Язык специальности</h2>
+              <ul className="space-y-3">
+                {specialtyLanguage.map((item) => (
                   <li key={item.term} className="flex gap-3 text-sm">
                     <span className="text-violet-400/70 mt-0.5 flex-shrink-0">—</span>
                     <span className="text-white/60 leading-6">
